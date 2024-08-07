@@ -20,7 +20,7 @@ class RestaurantModel {
     String owner;
     String code;
     String logoUrl;
-    int rating;
+    double rating;
     String ratingCount;
     String verification;
     String verificationMessage;
@@ -57,7 +57,7 @@ class RestaurantModel {
         owner: json["owner"],
         code: json["code"],
         logoUrl: json["logoUrl"],
-        rating: json["rating"],
+        rating: json["rating"].toDouble(),
         ratingCount: json["ratingCount"],
         verification: json["verification"],
         verificationMessage: json["verificationMessage"],

@@ -54,7 +54,7 @@ class OrderController extends GetxController{
   }
   void paymentFunction(String payment)async{
     setLoading=true;
-    Uri url=Uri.parse('$appBaseUrl/api/stripe/create-checkout-session');
+    Uri url=Uri.parse('$appBaseUrl2/api/stripe/create-checkout-session');
     try{
       var response=await http.post(url,headers:{'Content-Type':'application/json',},body: payment);
       print(response.body);

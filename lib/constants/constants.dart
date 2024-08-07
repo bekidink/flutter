@@ -18,6 +18,7 @@ const kOffWhite=Color(0xffF3F4F8);
 double height=825.h;
 double width=375.w;
 const String appBaseUrl="http://192.168.10.23:8000";
+const String appBaseUrl2="https://192.168.10.23:8080";
 String googleapiKey='AIzaSyAsTLFFpymsuZ28OZ7XsYuv0gkfWTl9hTo';
 final List<String>verficationReasons=[
   "Real-time Updates : Get instant notifications about your order status.",'Direct Communication:A verified number ensures seamless communication.',

@@ -245,7 +245,7 @@ class FoodPage extends HookWidget {
                       }
                       else{
                         double price=(food.price+controller.additivePrice)*controller.count.value;
-                        OrderItems item=OrderItems(foodId: food.id,quantity:controller.count.value,price: price ,additives: controller.getCartAdditive(),instructions: preferences.text);
+                        OrderItems item=OrderItems(foodId: food.id,quantity:controller.count.value,price: price ,additives: controller.getCartAdditive(),instructions: preferences.text,);
                         Get.to(()=> OrderPage(restaurant: restaurant!,food: food,item: item,address:address!),transition: Transition.cupertino,duration: const Duration(milliseconds: 900));
                       }
                      

@@ -100,10 +100,11 @@ child: Column(
                 height:20.h
               ),
               CustomButton(text: "Proceed to Payment",btnHeight: 45,onTap: (){
-                OrderRequest orderData=OrderRequest(orderItems: widget.item, orderTotal: 67, deliveryFee: 23, grandTotal: 90, deliveryAddress: widget.address.id, restaurantAddress: widget.restaurant!.coords.address,   restaurantId: widget.restaurant!.id, restaurantCoords: [
+                OrderRequest orderData=OrderRequest(orderItems: widget.item, orderTotal: 67, deliveryFee: 23, grandTotal: 90,paymentMethod: "Stripe", deliveryAddress: widget.address.id, restaurantAddress: widget.restaurant!.coords.address,   restaurantId: widget.restaurant!.id, restaurantCoords: [
                   widget.restaurant.coords.latitude,
                   widget.restaurant.coords.longitude
                 ], recipientCoords: [widget.address.latitude,
+                
                   widget.address.longtitude]);
                 String order=orderRequestToJson(orderData);
                 controller.createOrder(order,orderData);
