@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "933250682911",
+    "project_id": "restaurant-4d81e",
+    "storage_bucket": "restaurant-4d81e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933250682911:android:7e3fe2808f0d8e0515052a",
+        "android_client_info": {
+          "package_name": "com.example.multivendor_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933250682911-3gns1if16kk3jpqtksg9aoptr327845t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI1Gpp66HNLh-lr0W4evuBBOmWUtXsAtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933250682911-3gns1if16kk3jpqtksg9aoptr327845t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
