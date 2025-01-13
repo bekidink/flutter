@@ -3,9 +3,7 @@ import 'dart:convert';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:multivendor_app/constants/constants.dart';
 import 'package:multivendor_app/model/fetch_model/ApiError.dart';
-import 'package:multivendor_app/model/fetch_model/FetchModel.dart';
 import 'package:multivendor_app/model/fetch_model/Restaurant.dart';
-import 'package:multivendor_app/model/fetch_model/categoryModel.dart';
 import 'package:http/http.dart' as http;
 import 'package:multivendor_app/model/hook/restaurant_model.dart';
 FetchRestaurant useFetchRestaurant(String code){
@@ -20,7 +18,7 @@ FetchRestaurant useFetchRestaurant(String code){
       
       final response=await http.get(url);
 
-       print(response);
+       print(response.statusCode);
       if(response.statusCode==200){
         var restaurant=jsonDecode(response.body);
         
@@ -29,7 +27,8 @@ FetchRestaurant useFetchRestaurant(String code){
         apiError.value=apiErrorFromJson(response.body);
       }
     }catch(e){
-error.value=e as Exception;
+// error.value=e as Exception;
+ isLoading.value=false;
     }finally{
       isLoading.value=false;
     }

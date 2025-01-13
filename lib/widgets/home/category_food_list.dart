@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:multivendor_app/constants/constants.dart';
-import 'package:multivendor_app/fetch/fetch_all_foods.dart';
 import 'package:multivendor_app/fetch/fetch_category_food.dart';
 import 'package:multivendor_app/model/fetch_model/foodModel.dart';
 import 'package:multivendor_app/widgets/home/food_tile.dart';
@@ -19,7 +18,7 @@ class CategoryFoodList extends HookWidget {
     return SizedBox(
       width: width,
       height: height,
-      child: isLoading?FoodShimmer():Padding(padding: EdgeInsets.all(12.h),child: ListView(
+      child: isLoading?const FoodShimmer():Padding(padding: EdgeInsets.all(12.h),child: ListView(
         children: List.generate(foods!.length, (index) {
           var food=foods[index];
           return FoodTile(food: food,color: Colors.white,);}

@@ -9,7 +9,6 @@ import '../../common/app_style.dart';
 import '../../common/backgroundContainer.dart';
 import '../../common/reusable_text.dart';
 import '../../constants/constants.dart';
-import '../../fetch/fetch_all_foods.dart';
 import '../../model/fetch_model/foodModel.dart';
 
 class Recommendations extends HookWidget {
@@ -29,7 +28,7 @@ class Recommendations extends HookWidget {
       ),
       body: BackGroundContainer(color:Colors.white, child:Padding(
         padding:  EdgeInsets.all(12.h),
-        child:isLoading?FoodShimmer(): ListView(
+        child:isLoading?const FoodShimmer(): ListView(
         scrollDirection: Axis.vertical,
         children: List.generate(foods!.length, (index) {
           var food=foods[index];

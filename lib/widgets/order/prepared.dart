@@ -3,7 +3,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:multivendor_app/constants/constants.dart';
 import 'package:multivendor_app/fetch/fetch_orders.dart';
 import 'package:multivendor_app/model/fetch_model/OrderResponses.dart';
-import 'package:multivendor_app/widgets/order/order_tile.dart';
 import 'package:multivendor_app/widgets/shimmers/FoodListShimmer.dart';
 
 import 'orderd_tile.dart';
@@ -18,9 +17,9 @@ class Prepared extends HookWidget {
     final isLoading=hookResult.isLoading;
     print(orders);
     if(isLoading){
-      return FoodShimmer();
+      return const FoodShimmer();
     }
-    return Container(
+    return SizedBox(
       height: height*.8,
       child: ListView.builder(
         itemCount: orders.length,

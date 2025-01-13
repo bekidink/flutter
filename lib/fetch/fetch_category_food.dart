@@ -4,9 +4,6 @@ import 'package:multivendor_app/constants/constants.dart';
 import 'package:multivendor_app/controllers/category_controller.dart';
 import 'package:multivendor_app/model/fetch_model/ApiError.dart';
 import 'package:multivendor_app/model/fetch_model/FetchFoods.dart';
-import 'package:multivendor_app/model/fetch_model/FetchModel.dart';
-import 'package:multivendor_app/model/fetch_model/Restaurant.dart';
-import 'package:multivendor_app/model/fetch_model/categoryModel.dart';
 import 'package:http/http.dart' as http;
 import 'package:multivendor_app/model/fetch_model/foodModel.dart';
 FetchFoods useCategoryFoods(String code){
@@ -38,7 +35,7 @@ error.value=e as Exception;
 
   }
   useEffect(() {
-    Future.delayed(Duration(seconds: 2));
+    Future.delayed(const Duration(seconds: 2));
     fetchData();
     return null;
   },[controller.categoryValue]);

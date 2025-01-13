@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:get/get.dart';
 import 'package:multivendor_app/model/additive_obs.dart';
@@ -57,7 +56,7 @@ additives.remove(additive.title);
   return additives;
 }
 
-RxDouble _totalPrice=0.0.obs;
+final RxDouble _totalPrice=0.0.obs;
 double get additivePrice=>_totalPrice.value;
 set setTotalPrice(double newPrice){
 _totalPrice.value=newPrice;

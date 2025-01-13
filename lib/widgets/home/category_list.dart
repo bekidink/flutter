@@ -43,7 +43,7 @@ class CategoryList extends HookWidget {
 }
 
 class CategoryWidget extends StatelessWidget {
-   CategoryWidget({super.key,required this.category});
+   const CategoryWidget({super.key,required this.category});
 final CategoryModel category;
 
   @override
@@ -58,7 +58,7 @@ final CategoryModel category;
     // Get.to(()=>const AllCategories(),transition: Transition.fadeIn,duration: Duration(milliseconds: 900));
    }
    else if(category.value=="more"){
-    Get.to(()=>const AllCategories(),transition: Transition.fadeIn,duration: Duration(milliseconds: 900));
+    Get.to(()=>const AllCategories(),transition: Transition.fadeIn,duration: const Duration(milliseconds: 900));
    }
     else{
     controller.updateCategory=category.id;

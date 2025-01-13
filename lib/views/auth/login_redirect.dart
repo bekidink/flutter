@@ -10,7 +10,6 @@ import '../../common/custom_button.dart';
 import '../../common/reusable_text.dart';
 import '../../constants/constants.dart';
 import '../../controllers/login_controller.dart';
-import 'register_page.dart';
 
 class LoginRedirect extends StatelessWidget {
   const LoginRedirect({super.key});
@@ -45,7 +44,7 @@ class LoginRedirect extends StatelessWidget {
               CustomButton(
                 text: 'L O G I N',
                 onTap: () {
-                Get.to(()=>LoginPage());
+                Get.to(()=>const LoginPage());
                 },
                 btnHeight: 40.h,
                 btnWidth: width,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:get/get.dart';
-import 'package:multivendor_app/common/custom_appbar.dart';
 import 'package:multivendor_app/common/custom_text_field.dart';
 import 'package:multivendor_app/views/search/loading_widget.dart';
 import 'package:multivendor_app/views/search/search_result.dart';
@@ -51,7 +50,7 @@ suffixIcon: GestureDetector(
 ),
 ),),
       ),
-   body: SafeArea(child: CustomContainer(widgetContent:controller.isLoading?FoodShimmer():controller.searchResults==null? LoadingWidget():const SearchResult(),color: Colors.white, )),
+   body: SafeArea(child: CustomContainer(widgetContent:controller.isLoading?const FoodShimmer():controller.searchResults==null? const LoadingWidget():const SearchResult(),color: Colors.white, )),
     )
   );
    

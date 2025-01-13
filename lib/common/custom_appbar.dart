@@ -9,7 +9,6 @@ import 'package:multivendor_app/common/app_style.dart';
 import 'package:multivendor_app/common/reusable_text.dart';
 import 'package:multivendor_app/constants/constants.dart';
 import 'package:multivendor_app/controllers/userlocation_controller.dart';
-import 'package:multivendor_app/fetch/fetch_default.dart';
 
 class CustomAppBar extends StatefulHookWidget {
   const CustomAppBar({super.key});
@@ -23,7 +22,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _determinePosition();
+    // _determinePosition();
   }
   final controller=Get.put(UserLocationController());
 
@@ -31,9 +30,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     final box=GetStorage();
     String? accessToken=box.read('token');
-    if(accessToken!=null){
-      useFetchDefault();
-    }
+    // if(accessToken!=null){
+    //   useFetchDefault();
+    // }
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 6.h),
       height: 110.h,
@@ -67,7 +66,7 @@ ReusableText(style: appStyle(13, kSecondary, FontWeight.w600), text: 'Deliver to
               ],
             ),
             ),
-           Text(getTimeOfDay(),style: TextStyle(fontSize: 35),)
+           Text(getTimeOfDay(),style: const TextStyle(fontSize: 35),)
               ],
             )
          

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:multivendor_app/constants/constants.dart';
 import 'package:multivendor_app/widgets/home/restaurant_widget.dart';
 import 'package:multivendor_app/widgets/shimmers/NearbyShimmer.dart';
 
@@ -21,12 +20,12 @@ class NearByRestaurantList extends HookWidget {
     return Container(
       height: 190.h,
       padding: EdgeInsets.only(left: 12.w,top:10.h),
-      child:isLoading?NearByShimmer(): ListView(
+      child:isLoading?const NearByShimmer(): ListView(
         scrollDirection: Axis.horizontal,
         children: List.generate(restaurants!.length, (index) {
           var restaurant=restaurants[index];
           return RestaurantWidget(image: restaurant.imageUrl, logo: restaurant.logoUrl, title: restaurant.title, time: restaurant.time, rating: '',onTap: (){
-            Get.to(()=>const AllNearbyRestaurant(),transition: Transition.cupertino,duration: Duration(milliseconds: 900));
+            Get.to(()=>const AllNearbyRestaurant(),transition: Transition.cupertino,duration: const Duration(milliseconds: 900));
           },);
         }),
       ),

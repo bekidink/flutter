@@ -8,7 +8,6 @@ import 'package:multivendor_app/model/fetch_model/AddressResponse.dart';
 import 'package:multivendor_app/model/fetch_model/ApiError.dart';
 
 import 'package:http/http.dart' as http;
-import 'package:multivendor_app/model/hook/address.dart';
 import 'package:multivendor_app/model/hook/default.dart';
 
 import '../controllers/address_controller.dart';
@@ -43,7 +42,7 @@ FetchDefault useFetchDefault(){
       }
     }catch(e){
 
-error.value=e as Exception;
+// error.value=e as Exception;
 box.write('defaultAddress', false);
     }finally{
       isLoading.value=false;

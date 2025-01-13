@@ -8,14 +8,14 @@ import '../../common/app_style.dart';
 import '../../constants/constants.dart';
 
 class PhoneVerificationPage extends StatefulWidget {
-   PhoneVerificationPage({super.key});
+   const PhoneVerificationPage({super.key});
 
   @override
   State<PhoneVerificationPage> createState() => _PhoneVerificationPageState();
 }
 
 class _PhoneVerificationPageState extends State<PhoneVerificationPage> {
-VerificationServices _verificationServices=VerificationServices();
+final VerificationServices _verificationServices=VerificationServices();
 
     final controller=Get.put(PhoneController());
 
@@ -43,7 +43,7 @@ VerificationServices _verificationServices=VerificationServices();
       width: width,
       height: height,
       color: kLightWhite,
-      child: CircularProgressIndicator(),));
+      child: const CircularProgressIndicator(),));
   }
 
 void _verifyPhoneNumber(String phoneNumber)async{

@@ -33,7 +33,7 @@ class _PaymentWebViewState extends State<PaymentWebView> {
     
    }
    final WebViewController controller=WebViewController.fromPlatformCreationParams(params);
-   controller..setJavaScriptMode(JavaScriptMode.unrestricted)..setBackgroundColor(Color(0x00000000))..setNavigationDelegate(
+   controller..setJavaScriptMode(JavaScriptMode.unrestricted)..setBackgroundColor(const Color(0x00000000))..setNavigationDelegate(
     NavigationDelegate(
       onPageStarted:(String url){
 
@@ -47,10 +47,10 @@ class _PaymentWebViewState extends State<PaymentWebView> {
     onUrlChange: (UrlChange change){
       if(change.url!.contains("checkout-success")){
         orderController.setPaymentUrl='';
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>SuccessFul()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>const SuccessFul()));
       } else if(change.url!.contains("cancel")){
         orderController.setPaymentUrl='';
- Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentFailed()));
+ Navigator.push(context, MaterialPageRoute(builder: (context)=>const PaymentFailed()));
       }
     }
     )

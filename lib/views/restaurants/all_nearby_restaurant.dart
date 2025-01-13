@@ -28,7 +28,7 @@ class AllNearbyRestaurant extends HookWidget {
       ),
       body: BackGroundContainer(color:Colors.white, child:Padding(
         padding:  EdgeInsets.all(12.h),
-        child:isLoading?NearByShimmer(): ListView(
+        child:isLoading?const NearByShimmer(): ListView(
         scrollDirection: Axis.vertical,
         children: List.generate(restaurants!.length, (index) {
           var restaurant=restaurants[index];

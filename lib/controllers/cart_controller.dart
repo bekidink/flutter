@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:multivendor_app/model/fetch_model/ApiError.dart';
 class CartController extends GetxController{
   final box=GetStorage();
-  RxBool _isLoading=false.obs;
+  final RxBool _isLoading=false.obs;
   bool get isLoading=>_isLoading.value;
   set setLoading(bool value){
     _isLoading.value=value;
@@ -35,8 +35,6 @@ if(response.statusCode==200){
         color: kLightWhite,
       ));
 }
-    }catch(e){
-
     }finally{
       setLoading=false;
     }
@@ -69,8 +67,6 @@ if(response.statusCode==200){
         color: kLightWhite,
       ));
 }
-    }catch(e){
-
     }finally{
       setLoading=false;
     }

@@ -23,22 +23,22 @@ class HomePage extends StatelessWidget {
     final controller=Get.put(CategoryController());
     return Scaffold(
       backgroundColor: kPrimary,
-      appBar: PreferredSize(preferredSize: Size.fromHeight(130.h), child: CustomAppBar()),
+      appBar: PreferredSize(preferredSize: Size.fromHeight(130.h), child: const CustomAppBar()),
    body: SafeArea(child: CustomContainer(widgetContent:Column(
     children: [
       const CategoryList(),
      Obx(() => controller.categoryValue==''?  Column(
         children:[
 Heading(text: 'Nearby Restaurants',onTap: (){
-        Get.to(()=>const AllNearbyRestaurant(),transition: Transition.cupertino,duration: Duration(milliseconds: 900));
+        Get.to(()=>const AllNearbyRestaurant(),transition: Transition.cupertino,duration: const Duration(milliseconds: 900));
       },),
       const NearByRestaurantList(),
       Heading(text: 'Try Something New',onTap: (){
-        Get.to(()=>const Recommendations(),transition: Transition.cupertino,duration: Duration(milliseconds: 900));
+        Get.to(()=>const Recommendations(),transition: Transition.cupertino,duration: const Duration(milliseconds: 900));
       },),
       const FoodList(),
       Heading(text: 'Fastest food closer to you',onTap: (){
-        Get.to(()=>const AllFastestFoods(),transition: Transition.cupertino,duration: Duration(milliseconds: 900));
+        Get.to(()=>const AllFastestFoods(),transition: Transition.cupertino,duration: const Duration(milliseconds: 900));
       },),
       const FoodList(),
       ]):CustomContainer(widgetContent: Column(
@@ -46,7 +46,7 @@ Heading(text: 'Nearby Restaurants',onTap: (){
            Heading(more: true, text: 'Explore ${controller.titleValue}',onTap: (){
         // Get.to(()=>const Recommendations(),transition: Transition.cupertino,duration: Duration(milliseconds: 900));
       },),
-      CategoryFoodList()
+      const CategoryFoodList()
         ],
       ))
       )    ],

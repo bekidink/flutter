@@ -56,7 +56,7 @@ class FoodTile extends StatelessWidget {
                             color: kGray.withOpacity(0.6),
                             height: 16.h,
                             width: width,
-                            child: RatingBarIndicator(itemBuilder:(context,i)=>Icon(Icons.star,color: kSecondary,),rating: 5, itemCount: 5,itemSize: 15.h,),
+                            child: RatingBarIndicator(itemBuilder:(context,i)=>const Icon(Icons.star,color: kSecondary,),rating: 5, itemCount: 5,itemSize: 15.h,),
                           ) )
                       ],
                     ),

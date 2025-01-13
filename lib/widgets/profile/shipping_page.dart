@@ -33,7 +33,7 @@ class _ShippingPageState extends State<ShippingPage> {
   final TextEditingController _instructions=TextEditingController();
   final controller=Get.put(AddressController());
   List<dynamic> _placeList=[];
-   List<dynamic> _selectedPlace=[];
+   final List<dynamic> _selectedPlace=[];
   @override
   void initState() {
     _pageController.addListener(() {
@@ -47,7 +47,7 @@ class _ShippingPageState extends State<ShippingPage> {
   }
   void _onSearchChanged(String searchQuery)async{
     if(searchQuery.isNotEmpty){
-final url=Uri.parse('https://maps.googleapis.com/maps/api/place/autocomplete/json?query=${searchQuery}&key=$googleApiKey');
+final url=Uri.parse('https://maps.googleapis.com/maps/api/place/autocomplete/json?query=$searchQuery&key=$googleApiKey');
     final response=await http.get(url);
     if(response.statusCode==200){
       final data=response.body;
@@ -105,13 +105,13 @@ _searchController.text=address;
         }, icon:const Icon(Icons.arrow_back_ios,color: kPrimary,)):IconButton(onPressed: (){
 locationController.setTabIndex=0;
 _pageController.previousPage(
-  duration: Duration(milliseconds: 500),
+  duration: const Duration(milliseconds: 500),
   curve: Curves.easeIn
 );
         }, icon:const Icon(AntDesign.leftcircle,color: kDark,)),
         )),
         actions: [
-          Obx(() => locationController.tabIndex==1?SizedBox.shrink():IconButton(onPressed: (){
+          Obx(() => locationController.tabIndex==1?const SizedBox.shrink():IconButton(onPressed: (){
             locationController.setTabIndex=1;
             _pageController.nextPage(duration:const Duration(
               milliseconds: 500
@@ -143,16 +143,16 @@ children: [
         _mapController=controller;
       },
       markers: selectedpostion==null?
-      Set.of([
-Marker(markerId: MarkerId(""),
-        position: locationController.position!,
+      {
+Marker(markerId: const MarkerId(""),
+        position: locationController.position,
         draggable: true,
         onDragEnd: (LatLng position){
           locationController.getUserAddress(position);
           selectedpostion=position;
         }
         )
-      ]):Set.of([
+      }:{
         Marker(markerId: const MarkerId(""),
         position: selectedpostion!,
         draggable: true,
@@ -161,9 +161,9 @@ Marker(markerId: MarkerId(""),
           selectedpostion=position;
         }
         )
-      ])
+      }
       ,
-      initialCameraPosition: CameraPosition(target:selectedpostion ?? LatLng(9.0058578, 38.7675902),zoom: 15,)),
+      initialCameraPosition: CameraPosition(target:selectedpostion ?? const LatLng(9.0058578, 38.7675902),zoom: 15,)),
       Column(
         children: [
           Container(
@@ -174,13 +174,13 @@ Marker(markerId: MarkerId(""),
             child: TextField(
               controller: _searchController,
               onChanged:_onSearchChanged ,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: "s"
               ),
             ),
 
           ),
-          _placeList.isEmpty?SizedBox.shrink():Expanded(child: ListView(
+          _placeList.isEmpty?const SizedBox.shrink():Expanded(child: ListView(
             children: List.generate(_placeList.length, (index) {
               return Container(
                 color: Colors.white,
@@ -232,7 +232,7 @@ Marker(markerId: MarkerId(""),
  SizedBox(
           height: 15.h,
         ),
-        Padding(padding: EdgeInsets.only(left: 8),
+        Padding(padding: const EdgeInsets.only(left: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -251,12 +251,16 @@ Marker(markerId: MarkerId(""),
           btnHeight: 40,
           text: 'S U B M I T',
           onTap: (){
+            print(_postalCode.text);
+            print(_instructions.text);
             if(_searchController.text.isNotEmpty && _postalCode.text.isNotEmpty && _instructions.text.isNotEmpty){
               AddressModel model=AddressModel( 
-              addressLine1: _searchController.text, postalCode: _postalCode.text, addressModelDefault: locationController.isDefault, latitude: selectedpostion!.latitude, longtitude: selectedpostion!.longitude);
+              addressLine1: _searchController.text, postalCode: _postalCode.text, addressModelDefault: locationController.isDefault, latitude:123, longtitude:1234);
               String data=addressModelToJson(model);
               // print(data);
               controller.addAddress(data);
+            }else{
+            print("error");
             }
           },
         )

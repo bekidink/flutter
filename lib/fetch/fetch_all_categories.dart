@@ -2,7 +2,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:multivendor_app/constants/constants.dart';
 import 'package:multivendor_app/model/fetch_model/ApiError.dart';
 import 'package:multivendor_app/model/fetch_model/FetchModel.dart';
-import 'package:multivendor_app/model/fetch_model/Restaurant.dart';
 import 'package:multivendor_app/model/fetch_model/categoryModel.dart';
 import 'package:http/http.dart' as http;
 FetchHook useFetchAllCategories(){

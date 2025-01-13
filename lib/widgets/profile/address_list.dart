@@ -14,7 +14,7 @@ class AddressList extends StatelessWidget {
       itemBuilder: (context, index) {
         final address=addresses[index];
         return Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             border: Border(
               bottom: BorderSide(

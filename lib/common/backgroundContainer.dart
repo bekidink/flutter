@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:multivendor_app/constants/constants.dart';
 
 class BackGroundContainer extends StatelessWidget {
-   BackGroundContainer({super.key, required this.child, required this.color});
+   const BackGroundContainer({super.key, required this.child, required this.color});
 final Widget child;
 final Color color;
   @override

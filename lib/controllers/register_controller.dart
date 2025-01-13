@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -12,7 +11,7 @@ import '../model/fetch_model/SuccessModel.dart';
 
 class RegisterController extends GetxController{
   final box=GetStorage();
-  RxBool _isLoading=false.obs;
+  final RxBool _isLoading=false.obs;
   bool get isLoading=>_isLoading.value;
   set setLoading(bool newState){
     _isLoading.value=newState;
@@ -23,6 +22,7 @@ class RegisterController extends GetxController{
     Map<String,String>headers={"Content-Type":'application/json'};
     try{
 var response=await http.post(url,headers: headers,body: data);
+setLoading=false;
 if(response.statusCode==200){
     var data=successModelFromJson(response.body);
 
@@ -36,7 +36,7 @@ else{
   Get.snackbar("Failed to login", error.message,colorText: kLightWhite,backgroundColor: kRed,icon:const Icon(Icons.error_outline));
 }
     }catch(e){
-
+setLoading=false;
     }
   }
  

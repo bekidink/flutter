@@ -1,7 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -21,19 +19,16 @@ import 'package:multivendor_app/model/fetch_model/AddressResponse.dart';
 import 'package:multivendor_app/model/fetch_model/LoginResponse.dart';
 import 'package:multivendor_app/model/fetch_model/Restaurant.dart';
 import 'package:multivendor_app/model/fetch_model/cartRequest.dart';
-import 'package:multivendor_app/model/fetch_model/cartResponse.dart';
 import 'package:multivendor_app/model/fetch_model/foodModel.dart';
 import 'package:multivendor_app/views/auth/login_page.dart';
 import 'package:multivendor_app/views/orders/order_page.dart';
 import 'package:multivendor_app/views/restaurants/restaurant_page.dart';
-import 'package:multivendor_app/widgets/profile/shipping_page.dart';
 
-import '../../common/address_bottom_sheet.dart';
 import '../../model/fetch_model/OrderRequest.dart';
 import '../Verification/phone_verification_page.dart';
 
 class FoodPage extends HookWidget {
- FoodPage({super.key, required this.food});
+ const FoodPage({super.key, required this.food});
   final FoodModel food;
 
   
@@ -53,6 +48,7 @@ class FoodPage extends HookWidget {
     final box=GetStorage();
     var defaultaddress=box.read('defaultAddress');
     final data=useFetchDefault();
+    print(data.data);
     AddressResponse? address=data.data;
 
 
@@ -87,7 +83,7 @@ class FoodPage extends HookWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(food.imageUrl.length, (index) {
                         return Container(
-                          margin: EdgeInsets.only(left: 12),
+                          margin: const EdgeInsets.only(left: 12),
                           width: 10.w,
                           height: 10.h,
                           decoration: BoxDecoration(
@@ -151,7 +147,7 @@ class FoodPage extends HookWidget {
                           borderRadius: BorderRadius.all(Radius.circular(15.r))
                         ),
                         child: Center(
-                          child: Padding(padding: EdgeInsets.symmetric(horizontal: 4.0),
+                          child: Padding(padding: const EdgeInsets.symmetric(horizontal: 4.0),
                           child: ReusableText(text: tag,style: appStyle(11, kWhite, FontWeight.w400),),
                           ),
                         ),
@@ -200,7 +196,7 @@ class FoodPage extends HookWidget {
                           onTap: (){
                             controller.increament();
                           },
-                          child: Icon(AntDesign.pluscircleo),
+                          child: const Icon(AntDesign.pluscircleo),
                         ),
                         SizedBox(width: 5.w,),
                       Obx(() =>    ReusableText(style: appStyle(11, kDark, FontWeight.w400), text: "${controller.count.value}"),),
@@ -209,7 +205,7 @@ class FoodPage extends HookWidget {
                           onTap: (){
                             controller.decreament();
                           },
-                          child: Icon(AntDesign.minuscircleo),
+                          child: const Icon(AntDesign.minuscircleo),
                         )
                       ],
                     )
@@ -236,17 +232,26 @@ class FoodPage extends HookWidget {
                   GestureDetector(
                     onTap: (){
                       if(user==null){
-                        Get.to(()=>LoginPage());
-                      } else if(user.phoneVerification==false){
- _showVerficationSheet(context);
-                      }
-                      else if(defaultaddress==false){
-                        showAddressSheet(context);
-                      }
+                        Get.to(()=>const LoginPage());
+                      } 
+//                       else if(user.phoneVerification==false){
+//  _showVerficationSheet(context);
+//                       }
+                      // else if(defaultaddress==false){
+                      //   showAddressSheet(context);
+                      // }
                       else{
                         double price=(food.price+controller.additivePrice)*controller.count.value;
                         OrderItems item=OrderItems(foodId: food.id,quantity:controller.count.value,price: price ,additives: controller.getCartAdditive(),instructions: preferences.text,);
-                        Get.to(()=> OrderPage(restaurant: restaurant!,food: food,item: item,address:address!),transition: Transition.cupertino,duration: const Duration(milliseconds: 900));
+                       if (restaurant != null && address != null) {
+  Get.to(() => OrderPage(restaurant: restaurant, food: food, item: item, address: address));
+} else {
+  // Handle the case when one or more variables are null
+  print('One or more required fields are null');
+  // Optionally, show a dialog or Snackbar to inform the user
+}
+
+                        // Get.to(()=> OrderPage(restaurant: restaurant!,food: food,item: item,address:address!),);
                       }
                      
                     },
@@ -291,7 +296,7 @@ class FoodPage extends HookWidget {
         width: width,
         decoration: BoxDecoration(
           
-          image: DecorationImage(image: AssetImage('assets/images/bg4.jpg'),fit: BoxFit.fill,),color: kLightWhite,borderRadius: BorderRadius.only(
+          image: const DecorationImage(image: AssetImage('assets/images/bg4.jpg'),fit: BoxFit.fill,),color: kLightWhite,borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.r),
             topRight: Radius.circular(30.r)
           )
@@ -309,7 +314,7 @@ class FoodPage extends HookWidget {
               child: Column(
                 children: List.generate(verficationReasons.length, (index) {
                 return ListTile(
-                  leading: Icon(Icons.check_circle_outline,color: kPrimary,),
+                  leading: const Icon(Icons.check_circle_outline,color: kPrimary,),
                   title: Text(
                     textAlign: TextAlign.justify,
                     verficationReasons[index],style: appStyle(11, kGray, FontWeight.normal),
@@ -320,7 +325,7 @@ class FoodPage extends HookWidget {
             ),
             SizedBox(height: 5.h,),
             CustomButton(text: "Verify Phone Number",onTap: (){
-              Get.to(()=> PhoneVerificationPage());
+              Get.to(()=> const PhoneVerificationPage());
             },btnHeight: 35.h,)
           ],
         ),

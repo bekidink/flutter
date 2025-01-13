@@ -2,7 +2,6 @@
 //
 //     final orderRequest = orderRequestFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 OrderRequest orderRequestFromJson(String str) => OrderRequest.fromJson(json.decode(str));

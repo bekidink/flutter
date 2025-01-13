@@ -16,9 +16,9 @@ class RestaurantMenu extends HookWidget {
     final isLoading=hookResults.isLoading;
     return Scaffold(
       backgroundColor: kLightWhite,
-      body: Container(
+      body: SizedBox(
         height: height*.7,
-        child:isLoading?FoodShimmer(): ListView(
+        child:isLoading?const FoodShimmer(): ListView(
           children: List.generate(foods!.length, (index) {
             final FoodModel food=foods[index];
             return FoodTile(food: food);

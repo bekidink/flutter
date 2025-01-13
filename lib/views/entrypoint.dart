@@ -37,12 +37,12 @@ List<Widget> pageList=const[
             },
             currentIndex: controller.tabIndex,
             items: [
-            BottomNavigationBarItem(icon:  controller.tabIndex==0? Icon(AntDesign.appstore1):Icon(AntDesign.appstore_o),label: 'Home'),
-             BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
-              BottomNavigationBarItem(icon: Badge(
+            BottomNavigationBarItem(icon:  controller.tabIndex==0? const Icon(AntDesign.appstore1):const Icon(AntDesign.appstore_o),label: 'Home'),
+             const BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
+              const BottomNavigationBarItem(icon: Badge(
                 label: Text('1'),
                 child: Icon(FontAwesome.opencart)),label: 'Cart'),
-               BottomNavigationBarItem(icon: controller.tabIndex==3? Icon(FontAwesome.user_circle):Icon(FontAwesome.user_circle_o),label: 'Profile'),
+               BottomNavigationBarItem(icon: controller.tabIndex==3? const Icon(FontAwesome.user_circle):const Icon(FontAwesome.user_circle_o),label: 'Profile'),
           ]),
           ),
           

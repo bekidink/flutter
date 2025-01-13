@@ -25,18 +25,18 @@ orderController.setLoading=true;
         elevation: 0,
         automaticallyImplyLeading: false,
         actions: [
-          Padding(padding: EdgeInsets.fromLTRB(0, 0, 20, 20),
+          Padding(padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
           child: GestureDetector(
             onTap: (){
               Get.offAll(()=>MainScreen());
             },
-            child: Icon(AntDesign.closecircle,color: kGrayLight,),
+            child: const Icon(AntDesign.closecircle,color: kGrayLight,),
           ),
           )
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/images/bg1.png',),fit: BoxFit.cover)
         ),
         child: Stack(
@@ -49,14 +49,14 @@ orderController.setLoading=true;
                 color: kOffWhite,
                 borderRadius: BorderRadius.all(Radius.circular(20.r))
               ),
-              child: Padding(padding: EdgeInsets.all(8),child: Column(
+              child: Padding(padding: const EdgeInsets.all(8),child: Column(
                 children: [
                   SizedBox(
                     height: 20.h,
                   ),
                   ReusableText(style: appStyle(13,kGray , FontWeight.normal), text: "Payment Successful"),
-                  Divider(thickness: 2,),
-                  Padding(padding: EdgeInsets.all(8),
+                  const Divider(thickness: 2,),
+                  Padding(padding: const EdgeInsets.all(8),
                   child: Table(
                     children: [
                       TableRow(

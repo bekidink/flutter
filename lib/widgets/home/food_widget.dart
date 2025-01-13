@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/app_style.dart';
@@ -59,7 +58,7 @@ final void Function()? onTap;
               ),
               ),
 
-              Padding(padding: EdgeInsets.all(8),child: Column(
+              Padding(padding: const EdgeInsets.all(8),child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(

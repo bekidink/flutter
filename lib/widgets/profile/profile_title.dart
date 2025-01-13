@@ -19,7 +19,7 @@ class ProfileTileWidget extends StatelessWidget {
       onTap: onTap,
       leading: Icon(icon,size: 20,),
       title: ReusableText(style: appStyle(11, kGray, FontWeight.normal), text: title),
-      trailing: title!="Settings"?Icon(AntDesign.right,size: 16,):SvgPicture.asset('assets/icons/us.svg',width: 15.w,height: 20.h,),
+      trailing: title!="Settings"?const Icon(AntDesign.right,size: 16,):SvgPicture.asset('assets/icons/us.svg',width: 15.w,height: 20.h,),
     );
   }
 }

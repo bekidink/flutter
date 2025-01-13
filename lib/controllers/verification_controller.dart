@@ -10,7 +10,6 @@ import '../model/fetch_model/ApiError.dart';
 import '../model/fetch_model/LoginResponse.dart';
 import 'package:http/http.dart'as http;
 
-import '../views/auth/verification_page.dart';
 import '../views/entrypoint.dart';
 class VerificationController extends GetxController{
   
@@ -20,7 +19,7 @@ class VerificationController extends GetxController{
     _code=value;
   }
   final box=GetStorage();
-  RxBool _isLoading=false.obs;
+  final RxBool _isLoading=false.obs;
   bool get isLoading=>_isLoading.value;
   set setLoading(bool newState){
     _isLoading.value=newState;
@@ -29,7 +28,7 @@ class VerificationController extends GetxController{
     setLoading=true;
     String? accessToken=box.read('token');
     Uri url=Uri.parse('$appBaseUrl/api/users/verify/$code');
-    Map<String,String>headers={"Content-Type":'application/json','Authorization':'Bearer ${accessToken}'};
+    Map<String,String>headers={"Content-Type":'application/json','Authorization':'Bearer $accessToken'};
     try{
 var response=await http.get(url,headers: headers);
 print(response.statusCode);

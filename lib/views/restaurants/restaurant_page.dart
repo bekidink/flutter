@@ -1,7 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -10,7 +8,6 @@ import 'package:multivendor_app/common/app_style.dart';
 import 'package:multivendor_app/common/custom_button.dart';
 import 'package:multivendor_app/common/reusable_text.dart';
 import 'package:multivendor_app/constants/constants.dart';
-import 'package:multivendor_app/constants/uidata.dart';
 import 'package:multivendor_app/model/fetch_model/Restaurant.dart';
 import 'package:multivendor_app/views/restaurants/rating_page.dart';
 import 'package:multivendor_app/widgets/direction_page.dart';
@@ -27,7 +24,7 @@ final  RestaurantModel? restaurant;
 }
 
 class _RestaurantPageState extends State<RestaurantPage> with TickerProviderStateMixin{
- late TabController _tabController=TabController(length: 2,vsync: this);
+ late final TabController _tabController=TabController(length: 2,vsync: this);
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(length: 2, child: Scaffold(
@@ -60,7 +57,7 @@ class _RestaurantPageState extends State<RestaurantPage> with TickerProviderStat
               itemBuilder: (context,i)=>const Icon(Icons.star,color: Colors.yellow,)),
               CustomButton(
                 onTap: (){
-                  Get.to(()=>RatingPage());
+                  Get.to(()=>const RatingPage());
                 },
                 btnColor: kSecondary,
                 btnWidth:width/3 ,
@@ -98,12 +95,12 @@ class _RestaurantPageState extends State<RestaurantPage> with TickerProviderStat
         SizedBox(height: 10.h,),
         Padding(padding: EdgeInsets.symmetric(horizontal: 8.w),child: Column(
           children: [
-            RowText(first: "Distance to Restaurant", second: "2.7km"),
+            const RowText(first: "Distance to Restaurant", second: "2.7km"),
             SizedBox(height: 3.h,),
-             RowText(first: "Estimated Price", second: "\$2.7"),
+             const RowText(first: "Estimated Price", second: "\$2.7"),
               SizedBox(height: 3.h,),
-              RowText(first: "Estimated Time", second: "3omin"),
-Divider(thickness: 0.7,)
+              const RowText(first: "Estimated Time", second: "3omin"),
+const Divider(thickness: 0.7,)
           ],
         ),),
 Padding(

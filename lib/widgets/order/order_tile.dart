@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:multivendor_app/controllers/cart_controller.dart';
 import 'package:multivendor_app/model/fetch_model/cartRequest.dart';
 import 'package:multivendor_app/model/fetch_model/foodModel.dart';
-import 'package:multivendor_app/views/food/food_page.dart';
 
 import '../../common/app_style.dart';
 import '../../common/reusable_text.dart';
@@ -56,7 +55,7 @@ class OrderTile extends StatelessWidget {
                             color: kGray.withOpacity(0.6),
                             height: 16.h,
                             width: width,
-                            child: RatingBarIndicator(itemBuilder:(context,i)=>Icon(Icons.star,color: kSecondary,),rating: 5, itemCount: 5,itemSize: 15.h,),
+                            child: RatingBarIndicator(itemBuilder:(context,i)=>const Icon(Icons.star,color: kSecondary,),rating: 5, itemCount: 5,itemSize: 15.h,),
                           ) )
                       ],
                     ),

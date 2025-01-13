@@ -40,7 +40,7 @@ class UserInfoWidget extends StatelessWidget {
                   ),)
                 ],
               ),
-              Icon(Icons.edit)
+              const Icon(Icons.edit)
             ],
           )
           ,)

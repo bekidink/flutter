@@ -3,17 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:multivendor_app/common/custom_appbar.dart';
 import 'package:multivendor_app/common/custom_button.dart';
 import 'package:multivendor_app/controllers/login_controller.dart';
 import 'package:multivendor_app/model/fetch_model/LoginResponse.dart';
 import 'package:multivendor_app/views/auth/login_redirect.dart';
-import 'package:multivendor_app/views/auth/verification_page.dart';
 import 'package:multivendor_app/views/orders/user_orders.dart';
 import 'package:multivendor_app/widgets/profile/address_page.dart';
 import 'package:multivendor_app/widgets/profile/profile_appbar.dart';
 import 'package:multivendor_app/widgets/profile/profile_title.dart';
-import 'package:multivendor_app/widgets/profile/shipping_page.dart';
 import 'package:multivendor_app/widgets/profile/user_widget.dart';
 
 import '../../common/custome_container.dart';
@@ -34,12 +31,12 @@ class ProfilePage extends StatelessWidget {
     if(token==null){
       Get.to(()=>const LoginRedirect());
     }
-    if(user!=null && user.verification==false){
-      return const VerificationPage();
-    }
+    // if(user!=null && user.verification==false){
+    //   return const VerificationPage();
+    // }
     return Scaffold(
       backgroundColor: kPrimary,
-      appBar: PreferredSize(preferredSize: Size.fromHeight(50.h), child:ProfileAppBar()),
+      appBar: PreferredSize(preferredSize: Size.fromHeight(50.h), child:const ProfileAppBar()),
    body: SafeArea(child: CustomContainer(widgetContent:Column(
     children: [
       SizedBox(
@@ -57,7 +54,7 @@ class ProfilePage extends StatelessWidget {
           children: [
             UserInfoWidget(user: user,),
             ProfileTileWidget(title: "My Orders", icon:Ionicons.fast_food_outline,onTap: (){
-              Get.to(()=>UserOrders(),transition: Transition.rightToLeft,duration: Duration(
+              Get.to(()=>const UserOrders(),transition: Transition.rightToLeft,duration: const Duration(
                 milliseconds: 500
               ));
             }, ),
@@ -85,7 +82,7 @@ class ProfilePage extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           children: [
             ProfileTileWidget(title: "Shipping Address", icon:SimpleLineIcons.location_pin,onTap: (){
-              Get.to(()=>const AddressPage(),transition: Transition.rightToLeft,duration: Duration(
+              Get.to(()=>const AddressPage(),transition: Transition.rightToLeft,duration: const Duration(
                 milliseconds: 500
               ));
             }, ),

@@ -57,7 +57,7 @@ final void Function()? onTap;
               ),
               ),
 
-              Padding(padding: EdgeInsets.all(8),child: Column(
+              Padding(padding: const EdgeInsets.all(8),child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ReusableText(style: appStyle(12, kDark, FontWeight.w500), text:title),
@@ -72,7 +72,7 @@ final void Function()? onTap;
                     children: [
                       RatingBarIndicator(
                         rating: 5,
-                        itemBuilder: (context, index) => Icon(Icons.star,color: kPrimary,),itemCount: 5, itemSize: 15.h,
+                        itemBuilder: (context, index) => const Icon(Icons.star,color: kPrimary,),itemCount: 5, itemSize: 15.h,
                       ),
                       SizedBox(width: 10.w,),
                       ReusableText(style: appStyle(9, kGray, FontWeight.w500), text: "5 reviews and ratings")

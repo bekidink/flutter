@@ -8,12 +8,12 @@ import 'package:http/http.dart' as http;
 import '../model/fetch_model/ApiError.dart';
 class AddressController extends GetxController{
   final box=GetStorage();
-  RxBool _isLoading=false.obs;
+  final RxBool _isLoading=false.obs;
   bool get isLoading=>_isLoading.value;
   set setLoading(bool value){
     _isLoading.value=value;
   }
-  RxString _addressLine=''.obs;
+  final RxString _addressLine=''.obs;
   String get addressLine=>_addressLine.value;
   set setAddress(String value){
     _addressLine.value=value;
@@ -43,8 +43,6 @@ if(response.statusCode==200){
         color: kLightWhite,
       ));
 }
-    }catch(e){
-
     }finally{
       setLoading=false;
     }

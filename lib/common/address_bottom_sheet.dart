@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:multivendor_app/widgets/profile/shipping_page.dart';
 
 import '../constants/constants.dart';
-import '../views/Verification/phone_verification_page.dart';
 import 'app_style.dart';
 import 'custom_button.dart';
 import 'reusable_text.dart';
@@ -16,7 +15,7 @@ Future<dynamic>showAddressSheet(BuildContext context){
         width: width,
         decoration: BoxDecoration(
           
-          image: DecorationImage(image: AssetImage('assets/images/bg4.jpg'),fit: BoxFit.fill,),color: kLightWhite,borderRadius: BorderRadius.only(
+          image: const DecorationImage(image: AssetImage('assets/images/bg4.jpg'),fit: BoxFit.fill,),color: kLightWhite,borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.r),
             topRight: Radius.circular(30.r)
           )

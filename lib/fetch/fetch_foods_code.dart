@@ -2,9 +2,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:multivendor_app/constants/constants.dart';
 import 'package:multivendor_app/model/fetch_model/ApiError.dart';
 import 'package:multivendor_app/model/fetch_model/FetchFoods.dart';
-import 'package:multivendor_app/model/fetch_model/FetchModel.dart';
-import 'package:multivendor_app/model/fetch_model/Restaurant.dart';
-import 'package:multivendor_app/model/fetch_model/categoryModel.dart';
 import 'package:http/http.dart' as http;
 import 'package:multivendor_app/model/fetch_model/foodModel.dart';
 FetchFoods useAllFoodsByCode(String code){

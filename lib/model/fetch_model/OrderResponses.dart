@@ -2,7 +2,6 @@
 //
 //     final orderResponses = orderResponsesFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 List<OrderResponses> orderResponsesFromJson(String str) => List<OrderResponses>.from(json.decode(str).map((x) => OrderResponses.fromJson(x)));

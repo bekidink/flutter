@@ -1,5 +1,4 @@
 import 'package:firebase_app_check/firebase_app_check.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,12 +31,14 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     final box=GetStorage();
-    // String token=box.read("token");
+    String?token=box.read("token");
+    bool isToken=false;
+    
     //Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in,unit in dp)
     return ScreenUtilInit(
       designSize: const Size(360, 690),
@@ -51,14 +52,14 @@ class MyApp extends StatelessWidget {
           // You can use the library anywhere in the app even in theme
           theme: ThemeData(
            scaffoldBackgroundColor: kOffWhite,
-           iconTheme: IconThemeData(color: kDark),
+           iconTheme: const IconThemeData(color: kDark),
            primarySwatch: Colors.grey,
 
           ),
           home: child,
         );
       },
-      child: LoginPage(),
+      child: token==null?LoginPage():  MainScreen(),
     );
   }
 }

@@ -10,7 +10,7 @@ import '../../constants/constants.dart';
 import '../../views/categories/category_page.dart';
 
 class CategoryTile extends StatelessWidget {
-   CategoryTile({super.key,required this.category});
+   const CategoryTile({super.key,required this.category});
    final CategoryModel category;
   @override
   Widget build(BuildContext context) {

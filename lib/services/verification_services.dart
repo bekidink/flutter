@@ -22,7 +22,7 @@ class VerificationServices{
       codeSent(verificationId,resendToken);
     }, codeAutoRetrievalTimeout: (String verificationId){
 debugPrint('Code auto retrieval timeout for $verificationId');
-    },phoneNumber: phoneNumber,timeout: Duration(seconds: 60));
+    },phoneNumber: phoneNumber,timeout: const Duration(seconds: 60));
   }
   Future<void> verifySmsCode(String verificationId,String smsCode)async{
  PhoneAuthCredential credential=PhoneAuthProvider.credential(verificationId: verificationId, smsCode: smsCode);

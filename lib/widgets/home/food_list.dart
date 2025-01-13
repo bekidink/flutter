@@ -8,7 +8,6 @@ import 'package:multivendor_app/views/food/food_page.dart';
 import 'package:multivendor_app/widgets/home/food_widget.dart';
 import 'package:multivendor_app/widgets/shimmers/NearbyShimmer.dart';
 
-import '../../constants/constants.dart';
 
 class FoodList extends HookWidget {
   const FoodList({super.key});
@@ -21,7 +20,7 @@ class FoodList extends HookWidget {
      return Container(
       height: 184.h,
       padding: EdgeInsets.only(left: 12.w,top:10.h),
-      child:isLoading?NearByShimmer(): ListView(
+      child:isLoading?const NearByShimmer(): ListView(
         scrollDirection: Axis.horizontal,
         children: List.generate(foods!.length, (index) {
           var food=foods[index];

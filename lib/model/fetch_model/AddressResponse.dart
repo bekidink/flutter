@@ -2,7 +2,6 @@
 //
 //     final addressResponse = addressResponseFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 List<AddressResponse> addressResponseFromJson(String str) => List<AddressResponse>.from(json.decode(str).map((x) => AddressResponse.fromJson(x)));

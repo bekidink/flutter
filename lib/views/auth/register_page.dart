@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:multivendor_app/model/fetch_model/RegisterModel.dart';
+import 'package:multivendor_app/views/auth/login_page.dart';
 
 import '../../common/app_style.dart';
 import '../../common/backgroundContainer.dart';
@@ -90,9 +91,7 @@ controller: passwordController,
                   children: [
                     GestureDetector
                     (
-                      onTap: (){
-
-                      },
+                      onTap: () => Get.to(()=>LoginPage()),
                       child: ReusableText(style: appStyle(12, Colors.blue, FontWeight.normal), text: 'Sign In')),
                   ],
                 ),
@@ -103,7 +102,7 @@ controller: passwordController,
               CustomButton(
                 text: 'R E G I S T E R',
                 onTap: () {
-                 if(editingController.text!.isNotEmpty && usernameController.text!.isNotEmpty && passwordController.text.length>=8){
+                 if(editingController.text.isNotEmpty && usernameController.text.isNotEmpty && passwordController.text.length>=8){
                   RegisterModel model=RegisterModel(email: editingController.text, password: passwordController.text,username: usernameController.text);
                   String data=registerModelToJson(model);
                   controller.registerFunction(data);

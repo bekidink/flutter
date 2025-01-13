@@ -11,12 +11,12 @@ import 'package:multivendor_app/widgets/order/payment_webview.dart';
 import '../constants/constants.dart';
 import '../model/fetch_model/OrderRequest.dart';
 class OrderController extends GetxController{
-  RxBool _isLoading=false.obs;
+  final RxBool _isLoading=false.obs;
   bool get isLoading=>_isLoading.value;
   set setLoading(bool value){
     _isLoading.value=value;
   }
-  RxString _paymentUrl=''.obs;
+  final RxString _paymentUrl=''.obs;
   String get paymentUrl=>_paymentUrl.value;
   set setPaymentUrl(String url){
     _paymentUrl.value=url;
@@ -62,7 +62,7 @@ class OrderController extends GetxController{
 var urlData=jsonDecode(response.body);
 setPaymentUrl=urlData['url'];
           setLoading=false;
-          Get.to(()=>PaymentWebView());
+          Get.to(()=>const PaymentWebView());
       }
     }catch(e){
 

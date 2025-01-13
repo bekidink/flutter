@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:multivendor_app/common/app_style.dart';
 import 'package:multivendor_app/common/backgroundContainer.dart';
 import 'package:multivendor_app/common/reusable_text.dart';
 import 'package:multivendor_app/constants/constants.dart';
 import 'package:multivendor_app/model/fetch_model/categoryModel.dart';
 import 'package:multivendor_app/widgets/home/category_tile.dart';
-import 'package:multivendor_app/widgets/shimmers/CategoryShimmer.dart';
 import 'package:multivendor_app/widgets/shimmers/FoodListShimmer.dart';
 
 import '../../fetch/fetch_all_categories.dart';
-import 'category_page.dart';
 
 class AllCategories extends HookWidget {
   const AllCategories({super.key});

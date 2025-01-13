@@ -2,7 +2,6 @@
 //
 //     final orderModel = orderModelFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 import 'package:multivendor_app/model/fetch_model/cartResponse.dart';

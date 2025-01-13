@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -81,7 +80,7 @@ controller: passwordController,
                     GestureDetector
                     (
                       onTap: (){
-                        Get.to(()=>RegisterPage());
+                        Get.to(()=>const RegisterPage());
                       },
                       child: ReusableText(style: appStyle(12, Colors.blue, FontWeight.normal), text: 'Sign Up')),
                   ],
@@ -91,13 +90,13 @@ controller: passwordController,
                 height: 25.h,
               ),
               CustomButton(
-                text: 'L O G I N',
+                text:  'L O G I N' ,
                 onTap: () {
                  if(editingController.text.isNotEmpty && passwordController.text.length>=8){
                   LoginModel model=LoginModel(email: editingController.text, password: passwordController.text);
                   String data=loginModelToJson(model);
                   controller.loginFunction(data);
-                  print(data);
+                  
                  }
                 },
                 btnHeight: 40.h,

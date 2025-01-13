@@ -2,7 +2,6 @@
 //
 //     final addressModel = addressModelFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 AddressModel addressModelFromJson(String str) => AddressModel.fromJson(json.decode(str));

@@ -1,13 +1,10 @@
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:multivendor_app/constants/constants.dart';
-import 'package:multivendor_app/model/fetch_model/AddressResponse.dart';
 import 'package:multivendor_app/model/fetch_model/ApiError.dart';
 
 import 'package:http/http.dart' as http;
-import 'package:multivendor_app/model/fetch_model/cartRequest.dart';
 import 'package:multivendor_app/model/fetch_model/cartResponse.dart';
-import 'package:multivendor_app/model/hook/address.dart';
 import 'package:multivendor_app/model/hook/cart.dart';
 FetchCart useFetchCart(){
   final box=GetStorage();

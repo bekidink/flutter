@@ -5,28 +5,28 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:multivendor_app/constants/constants.dart';
 import 'package:http/http.dart' as http;
 class UserLocationController extends GetxController{
-  RxBool _isDefault=false.obs;
+  final RxBool _isDefault=false.obs;
   bool get isDefault=>_isDefault.value;
   set setIsDefault(bool value){
     _isDefault.value=value;
   }
-  RxInt _tabIndex=0.obs;
+  final RxInt _tabIndex=0.obs;
   int get tabIndex => _tabIndex.value;
   set setTabIndex(int value){
     _tabIndex.value=value;
   }
   
-  LatLng position=LatLng(0, 0);
+  LatLng position=const LatLng(0, 0);
   
   void setPostion(LatLng value){
   position=value;
   }
-  RxString _address=''.obs;
+  final RxString _address=''.obs;
   String get address=> _address.value;
   set setAddress(String value){
     _address.value=value;
   }
-RxString _postalcode=''.obs;
+final RxString _postalcode=''.obs;
 String get postalCode=>_postalcode.value;
 set SetPostalCode(String value){
   _postalcode.value=value;

@@ -29,14 +29,14 @@ class CategoryPage extends HookWidget {
           controller.updateCategory='';
           controller.updateTitle='';
           Get.back();
-        }, icon: Icon(Icons.arrow_back_ios)),
+        }, icon: const Icon(Icons.arrow_back_ios)),
         backgroundColor: kOffWhite,
         title: ReusableText(style: appStyle(13, kDark, FontWeight.w600), text: "${controller.categoryValue} Category"),
       ),
       body: BackGroundContainer(color: Colors.white, child: Container(
         padding: EdgeInsets.only(left: 12.w,top: 10.h),
         height: height,
-        child: isLoading?FoodShimmer():Padding(padding: EdgeInsets.all(12.h)),
+        child: isLoading?const FoodShimmer():Padding(padding: EdgeInsets.all(12.h)),
       ),),
     );
   }
